@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <title>Thanos Project</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+CU:wght@100..400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Playwrite CU", cursive;
+        background-image: linear-gradient(blue, white, green);
+      }
+      .maxUplogin {
+        padding: 10px;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        background-color: lightslategray;
+        color: blue;
+        position: absolute;
+      }
+      #firstChalp {
+        top: 30%;
+        left: 30%;
+        height: 470px;
+        width: 300px;
+        text-align: center;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        transform: translate(-30%, -30%);
+        position: absolute;
+        visibility: hidden;
+      }
+
+      header {
+        padding: 5px;
+        top: 50px;
+        left: 0px;
+        height: 60px;
+        width: 100%;
+        font-size: 30px;
+        background-color: yellow;
+        text-align: center;
+        color: white;
+        box-sizing: border-box;
+        position: absolute;
+      }
+
+      #maincart {
+        top: 10px;
+        right: 10px;
+        height: 300px;
+        width: 130px;
+        background-color: lightslategray;
+        position: absolute;
+        overflow-y: scroll;
+        overflow-x: scroll;
+      }
+      .removebtn {
+        height: 25px;
+        width: 15;
+        background-color: black;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        display: block;
+        cursor: pointer;
+      }
+      .row-one {
+        padding: 5px;
+        margin-top: 115px;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+      }
+      .row-one-black {
+        height: 380px;
+        width: 250px;
+        color: blue;
+        font-size: 45px;
+        background-color: black;
+        border: 5px dotted white;
+      }
+      .row-one-black ol li {
+        font-size: 20px;
+        color: blueviolet;
+      }
+      .buttons {
+        margin: 10px auto;
+        height: 80px;
+        width: 350px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+      }
+      #cemeronb {
+        margin-left: 7px;
+        height: 40px;
+        width: 40px;
+        background-color: #dd1e53;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+      }
+      #wheatb {
+        margin-left: 7px;
+        height: 40px;
+        width: 40px;
+        background-color: #e1eea8;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+      }
+      #pinkb {
+        margin-left: 7px;
+        height: 40px;
+        width: 40px;
+        background-color: #ef57ef;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+      }
+      #blueb {
+        margin-left: 7px;
+        height: 40px;
+        width: 40px;
+        background-color: #3f7cfd;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+      }
+      .btnAnimi {
+        animation: btnanimation 7s ease-in-out infinite;
+      }
+      @keyframes btnanimation {
+        0% {
+          border: 5px dotted blue;
+        }
+        50% {
+          border: 5px dotted blue;
+        }
+        100% {
+          border: 5px dotted blue;
+          transform: rotate(360deg);
+        }
+      }
+      .row-one-green {
+        height: 380px;
+        width: 250px;
+        color: white;
+        font-size: 45px;
+        background-image: linear-gradient(white, green);
+        border: 5px dotted white;
+      }
+      .row-one-green ol li {
+        font-size: 20px;
+        color: yellow;
+      }
+
+      #logs {
+        text-decoration: none;
+        color: lightslategray;
+        background-color: black;
+        cursor: pointer;
+      }
+      #homeimage {
+        top: 160px;
+        left: 40%;
+        height: 400px;
+        position: absolute;
+        filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+      }
+      .activeone {
+        animation-name: animione;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        background-color: green;
+      }
+      @keyframes animione {
+        0% {
+          height: 0px;
+        }
+        100% {
+          height: 150px;
+        }
+      }
+      .activenotone {
+        height: 150px;
+        width: 250px;
+        background-color: green;
+      }
+      .row-two {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+      }
+      .Firstboxx {
+        width: 250px;
+        text-align: center;
+        color: white;
+        border-top: 5px solid maroon;
+        position: relative;
+      }
+      .Blockimg {
+        height: 460px;
+        width: 300px;
+        filter: drop-shadow(16px 16px 10px black);
+      }
+      .img-one-1 {
+        top: 20px;
+        left: 40px;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        display: none;
+        cursor: pointer;
+      }
+      .img-two-2 {
+        top: 20px;
+        left: 130px;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        display: none;
+        cursor: pointer;
+      }
+      .img-three-3 {
+        top: 80px;
+        left: 90px;
+        height: 50px;
+        width: 50px;
+        border: none;
+        border-radius: 50%;
+        position: absolute;
+        display: none;
+        cursor: pointer;
+      }
+      .Secondboxx {
+        width: 250px;
+        text-align: center;
+        color: white;
+        border-top: 5px solid red;
+        position: relative;
+      }
+      .activetwo {
+        animation-name: animitwo;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        background-color: blue;
+      }
+      @keyframes animitwo {
+        0% {
+          height: 0px;
+        }
+        100% {
+          height: 150px;
+        }
+      }
+      .activenottwo {
+        height: 150px;
+        width: 250px;
+        background-color: blue;
+      }
+      .row-three {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+      }
+      .row-three-lightBlue {
+        height: 380px;
+        width: 250px;
+        color: white;
+        font-size: 45px;
+        background-color: #67d3f7;
+        border: 5px dotted white;
+      }
+      .row-three-lightBlue ol li {
+        font-size: 20px;
+        color: blue;
+      }
+      .row-three-lightYellow {
+        height: 380px;
+        width: 250px;
+        color: white;
+        font-size: 45px;
+        background-color: rgb(103, 247, 103);
+        border: 5px dotted white;
+      }
+      .row-three-lightYellow ol li {
+        font-size: 20px;
+        color: red;
+      }
+      .row-four {
+        margin-bottom: 50px;
+        padding: 5px;
+        width: 100%;
+        border: 1px solid black;
+        display: flex;
+        justify-content: space-between;
+      }
+      .Thirdboxx {
+        width: 250px;
+        text-align: center;
+        color: white;
+        border-top: 5px solid maroon;
+        position: relative;
+      }
+      .activethree {
+        animation-name: animithree;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        background-color: pink;
+      }
+      @keyframes animithree {
+        0% {
+          height: 0px;
+        }
+        100% {
+          height: 150px;
+        }
+      }
+      .activenotthree {
+        height: 150px;
+        width: 250px;
+        background-color: pink;
+      }
+      .Fourthboxx {
+        width: 250px;
+        text-align: center;
+        color: white;
+        border-top: 5px solid maroon;
+        position: relative;
+      }
+      .activefour {
+        animation-name: animifour;
+        animation-duration: 7s;
+        animation-timing-function: ease;
+        animation-iteration-count: 1;
+        background-color: black;
+      }
+      @keyframes animifour {
+        0% {
+          height: 0px;
+        }
+        100% {
+          height: 150px;
+        }
+      }
+      .activenotfour {
+        height: 150px;
+        width: 250px;
+        background-color: black;
+      }
+      form {
+        margin-top: 30px;
+        text-align: center;
+      }
+      .input_form_End {
+        margin: 20px auto;
+        height: 100px;
+        width: 400px;
+        position: relative;
+      }
+      #inputtwo {
+        padding: 20px;
+        width: 350px;
+        font-size: 11px;
+        color: black;
+        border: none;
+        border-radius: 12px;
+        outline: none;
+      }
+      .fa-long-arrow-right {
+        top: 15px;
+        left: 340px;
+        font-size: 35px;
+        line-height: 30px;
+        color: grey;
+        position: absolute;
+        cursor: pointer;
+      }
+      .section {
+        display: none;
+      }
+      .section1 {
+        display: none;
+      }
+      .section2 {
+        display: none;
+      }
+      .section3 {
+        display: none;
+      }
+
+      @media (max-width: 667px) {
+        body {
+          background-image: url("./images/luke-stackpoole-mOEqOtmuPG8-unsplash.jpg");
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          overflow-x: hidden;
+        }
+        .maxUplogin {
+          display: none;
+        }
+        #maincart {
+          display: none;
+        }
+        header {
+          padding: 5px;
+          top: 0px;
+          left: 0px;
+          height: 50px;
+          font-size: 20px;
+          background-color: pink;
+          position: absolute;
+        }
+        #homeimage {
+          display: none;
+        }
+        .row-one {
+          width: 75%;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          border: none;
+        }
+        .row-one-black {
+          width: 70%;
+          border: 3px solid white;
+          border-radius: 5px;
+          background-color: #fff;
+        }
+        .row-one-green {
+          margin-top: 50px;
+          width: 70%;
+          border: 3px solid white;
+          border-radius: 5px;
+          background-color: #fff;
+        }
+        .row-one-green ol li {
+          color: white;
+        }
+        .buttons {
+          visibility: hidden;
+        }
+        .row-two {
+          display: none;
+          visibility: hidden;
+        }
+        .row-three {
+          margin-top: 150px;
+          width: 75%;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          border: none;
+        }
+        .row-three-lightBlue {
+          margin-bottom: 80px;
+          width: 70%;
+          background-color: #fff;
+          border: 3px solid white;
+          border-radius: 5px;
+        }
+        .row-three-lightYellow {
+          width: 70%;
+          background-color: #fff;
+          border: 3px solid white;
+          border-radius: 5px;
+        }
+        .row-four {
+          visibility: hidden;
+        }
+        .input_form_End {
+          margin: 0px;
+          height: 55px;
+          width: 60%;
+        }
+
+        .header {
+          opacity: 0;
+          transform: translateY(50px) skew(-10deg);
+          transition: all 1.2s ease-out;
+          text-align: center;
+        }
+
+        .headerVisible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .section {
+          top: 50px;
+          right: 0px;
+          padding: 200px;
+          height: 550px;
+          display: block;
+          position: absolute;
+          z-index: 1;
+        }
+        .section1 {
+          top: 600px;
+          right: 0px;
+          padding: 200px;
+          height: 500px;
+          border-top: 5px solid white;
+          display: block;
+          position: absolute;
+          z-index: 1;
+        }
+        .section2 {
+          top: 1100px;
+          right: 0px;
+          padding: 200px;
+          height: 500px;
+          border-top: 5px solid white;
+          display: block;
+          position: absolute;
+          z-index: 1;
+        }
+        .section3 {
+          top: 1600px;
+          right: 0px;
+          padding: 200px;
+          height: 350px;
+          border-top: 5px solid white;
+          display: block;
+          position: absolute;
+          z-index: 1;
+        }
+        .section-black {
+          font-size: 35px;
+          font-family: "Merriweather", serif;
+          background-color: #333;
+          color: #fff;
+          opacity: 0.9;
+        }
+        .fa-long-arrow-right {
+          font-size: 25px;
+          left: 300px;
+          position: absolute;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="maxUplogin">
+      <a href="./Login.html" id="logs">Login</a>
+    </div>
+
+    <!--Header-->
+    <header id="header"></header>
+
+    <section class="row-one">
+      <div class="row-one-black">
+        Male
+        <ol>
+          <li>$5</li>
+          <li>$10</li>
+          <li>$15</li>
+        </ol>
+      </div>
+
+      <div class="buttons">
+        <button id="cemeronb"></button>
+        <button id="wheatb"></button>
+        <button id="pinkb"></button>
+        <button id="blueb"></button>
+      </div>
+
+      <div class="row-one-green">
+        Female
+        <ol>
+          <li>$5</li>
+          <li>$10</li>
+          <li>$15</li>
+        </ol>
+      </div>
+    </section>
+
+    <!--Hero Image -->
+
+    <img src="./images/thanos-4194122_1920.png" id="homeimage" />
+
+    <section class="row-two">
+      <div id="firstbox" class="Firstboxx">
+        <img
+          src="./images/male1.jpg"
+          class="img-one-1"
+          id="img-first"
+          title="price $35 Add"
+        />
+        <img
+          src="./images/male2.jpg"
+          onclick="addToCart('Product 2', 40)"
+          class="img-two-2"
+          id="img-second"
+          title="Price $40 Add"
+        />
+        <img
+          src="./images/male3.jpg"
+          onclick="addToCart('Product 3', 50)"
+          class="img-three-3"
+          id="img-third"
+          title="Price $50 Add"
+        />
+      </div>
+      <div id="secondbox" class="Secondboxx">
+        <img
+          src="./images/female1.jpg"
+          class="img-one-1"
+          id="img-Lfirst"
+          onclick="addToCart('Product 1', 35)"
+          title="Price $35 Add"
+        />
+        <img
+          src="./images/Female2.jpg"
+          class="img-two-2"
+          id="img-Lsecond"
+          onclick="addToCart('Product 2', 40)"
+          title="Price $40 Add"
+        />
+        <img
+          src="./images/Female3.jpg"
+          class="img-three-3"
+          id="img-Lthird"
+          onclick="addToCart('Product 3', 50)"
+          title="Price $50 Add"
+        />
+      </div>
+    </section>
+
+    <section class="row-three">
+      <div class="row-three-lightBlue">
+        Children
+        <ol>
+          <li>$5</li>
+          <li>$10</li>
+          <li>$15</li>
+        </ol>
+      </div>
+      <div class="row-three-lightYellow">
+        Sale
+        <ol>
+          <li>$5</li>
+          <li>$10</li>
+          <li>$15</li>
+        </ol>
+      </div>
+    </section>
+    <!--Last Box of Children-->
+
+    <section class="row-four">
+      <div id="thirdbox" class="Thirdboxx">
+        <img
+          src="./images/Children1.jpg"
+          class="img-one-1"
+          id="img-child1"
+          onclick="addToCart('Product 1', 35)"
+          title="Price $35 Add"
+        />
+        <img
+          src="./images/Children2.jpg"
+          class="img-two-2"
+          id="img-child2"
+          onclick="addToCart('Product 2', 40)"
+          title="Price $40 Add"
+        />
+        <img
+          src="./images/Children3.jpg"
+          class="img-three-3"
+          id="img-child3"
+          onclick="addToCart('Product 3', 50)"
+          title="Price $50 Add"
+        />
+      </div>
+      <div id="fourthbox" class="Fourthboxx">
+        <img
+          src="./images/Sale1.jpg"
+          class="img-one-1"
+          id="img-saleO"
+          onclick="addToCart('Product 1', 35)"
+          title="Price $35 Add"
+        />
+        <img
+          src="./images/Sale2.jpg"
+          class="img-two-2"
+          id="img-saleT"
+          onclick="addToCart('Product 2', 40)"
+          title="Price 40$ Add"
+        />
+        <img
+          src="./images/Sale3.jpg"
+          class="img-three-3"
+          id="img-saleTh"
+          onclick="addToCart('Product 3', 50)"
+          title="Price 50$ Add"
+        />
+      </div>
+    </section>
+
+    <form>
+      <div class="input_form_End">
+        <input
+          type="text"
+          id="inputtwo"
+          placeholder="You want to give us Further Suggestions"
+        />
+        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+      </div>
+    </form>
+
+    <!--Sidebar Cart-->
+    <div id="maincart">
+      <span id="cart"></span>
+      <h5>Cart</h5>
+      <h5 style="margin-bottom: 5px">Total: $<span id="total">0</span></h5>
+    </div>
+
+    <div class="section section-black">
+      <h1 class="header">Cutting Edge</h1>
+    </div>
+    <div class="section1 section-black">
+      <h1 class="header">Solution</h1>
+    </div>
+    <div class="section2 section-black">
+      <h1 class="header">Browser Compatablity</h1>
+    </div>
+    <div class="section3 section-black">
+      <h1 class="header">Let Create It</h1>
+    </div>
+
+    <script src="./Script.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
